@@ -26,11 +26,15 @@ function setup() {
 
     //Orte wechseln
     input = createInput();//https://p5js.org/examples/dom-input-and-button.html
-    input.position(615, 65);
+   
 
     button = createButton('submit');
-    button.position(input.x + input.width, 65);
+    
     button.mousePressed(reloadJson);
+
+    let positionx = windowWidth/2-(input.width+button.width)/2;
+    input.position(positionx, 65);
+    button.position(positionx + input.width , 65);
 
 
    loadJSON(url, gotWeather);//nachdem das json File geladen ist, rufen wir die Funktion gotWeather auf
