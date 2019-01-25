@@ -21,7 +21,7 @@ function setup() {
   textAlign(CENTER, CENTER);
 
 
-    let url = 'http://api.apixu.com/v1/current.json?key='+key+'&q=Zürich';
+    let url = 'https://api.apixu.com/v1/current.json?key='+key+'&q=Zürich';
 
 
     //Orte wechseln
