@@ -80,7 +80,6 @@ function gotWeather(weather) {
     rain=[raindrops.x];
     //hier füllst du dein array rain mit den objekten raindrops, die haben eine startposition
 
-    //https://stackoverflow.com/questions/1290131/how-to-create-an-array-of-object-literals-in-a-loop
     for(let x = 0 ; x < circles ; x++){ //Humidity = anzahl Punkte
         let abst=random(0,circles);
         abst=map(abst,0,circles,0,height);//verteilen y position
@@ -89,15 +88,13 @@ function gotWeather(weather) {
             y:abst
         });
     }
-    // console.log(rain);
-    console.log(circles);
 
 }
 
 function reloadJson(){
 
     let ort = input.value();
-    let url = 'http://api.apixu.com/v1/current.json?key='+key+'&q='+ort+'&';
+    let url = 'https://api.apixu.com/v1/current.json?key='+key+'&q='+ort+'&';
     loadJSON(url, gotWeather);
 }
 
@@ -120,12 +117,11 @@ function reloadJson(){
 
         fill(farbe);
 
-        console.log(maxtemp);
+        // console.log(maxtemp);
 
 
         
         let rainfall = drops;
-        //console.log(rainfall);
 
         for(let r=1;r<rain.length;r++){
             rain[r].y+=rainfall;//hier greifst du auf das objekt zu und veränderst seine y position
